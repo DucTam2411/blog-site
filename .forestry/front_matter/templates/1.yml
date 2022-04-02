@@ -1,4 +1,29 @@
 ---
 label: '1'
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: date
+  type: datetime
+  label: date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: true
+  hidden: true
+  default: now
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: content
