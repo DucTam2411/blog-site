@@ -1,4 +1,15 @@
 ---
 label: short-template
 hide_body: true
-fields: []
+fields:
+- name: chicken
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: White
+  hidden: false
+  description: "----<br>title <br>---"
