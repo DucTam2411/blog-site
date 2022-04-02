@@ -1,4 +1,9 @@
 ---
 label: Short article
 hide_body: true
-fields: []
+fields:
+- name: good
+  type: image_gallery
+  config: {}
+  label: Good
+  description: "<strong>Sdsd</strong>"
