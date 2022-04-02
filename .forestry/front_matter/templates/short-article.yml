@@ -7,3 +7,5 @@ fields:
   config: {}
   label: Good
   description: "<strong>Sdsd</strong>"
+pages:
+- content/posts/Third.md
