@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Second | Blog stuff</title>
+<meta name="keywords" content="">
+<meta name="description" content="Introduces to Kubernetes I. The need of Kubernetes 1. Moving from monolithic app to microservice Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed, and managed as one entity, because they all run as a single OS process.
+ If changes → redeployment Requires small number of powerful servers Increasing loads → vertical scale → add more CPUs, memory&hellip;  Splitting Apps into Microservices These and other problems have forced us to start splitting complex monolithic applications into smaller independently deployable components called microservices.">
+<meta name="author" content="">
+<link rel="canonical" href="http://example.org/posts/introduces-26703/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.af0184fbb6b2020a786c6170f49ce22616f6bbf5bf08a622376e902bacd706dc.css" integrity="sha256-rwGE&#43;7ayAgp4bGFw9JziJhb2u/W/CKYiN26QK6zXBtw=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://example.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="http://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Second" />
+<meta property="og:description" content="Introduces to Kubernetes I. The need of Kubernetes 1. Moving from monolithic app to microservice Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed, and managed as one entity, because they all run as a single OS process.
+ If changes → redeployment Requires small number of powerful servers Increasing loads → vertical scale → add more CPUs, memory&hellip;  Splitting Apps into Microservices These and other problems have forced us to start splitting complex monolithic applications into smaller independently deployable components called microservices." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/introduces-26703/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-03T01:35:07&#43;07:00" />
+<meta property="article:modified_time" content="2022-04-03T01:35:07&#43;07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Second"/>
+<meta name="twitter:description" content="Introduces to Kubernetes I. The need of Kubernetes 1. Moving from monolithic app to microservice Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed, and managed as one entity, because they all run as a single OS process.
+ If changes → redeployment Requires small number of powerful servers Increasing loads → vertical scale → add more CPUs, memory&hellip;  Splitting Apps into Microservices These and other problems have forced us to start splitting complex monolithic applications into smaller independently deployable components called microservices."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://example.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Second",
+      "item": "http://example.org/posts/introduces-26703/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Second",
+  "name": "Second",
+  "description": "Introduces to Kubernetes I. The need of Kubernetes 1. Moving from monolithic app to microservice Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed, and managed as one entity, because they all run as a single OS process.\n If changes → redeployment Requires small number of powerful servers Increasing loads → vertical scale → add more CPUs, memory\u0026hellip;  Splitting Apps into Microservices These and other problems have forced us to start splitting complex monolithic applications into smaller independently deployable components called microservices.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Introduces to Kubernetes I. The need of Kubernetes 1. Moving from monolithic app to microservice Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed, and managed as one entity, because they all run as a single OS process.\n If changes → redeployment Requires small number of powerful servers Increasing loads → vertical scale → add more CPUs, memory…  Splitting Apps into Microservices These and other problems have forced us to start splitting complex monolithic applications into smaller independently deployable components called microservices.\nEach microservice runs as an independent process (see figure 1.1) and communicates with other microservices through simple, well-defined interfaces, it’s possible to develop and deploy each microservice separately.\nScaling Microservices Scaling microservices, unlike monolithic systems, where you need to scale the system as a whole, is done on a per-service basis, which means you have the option of scaling only those services that require more resources, while leaving others at their original scale.\nCertain components are replicated and run as multiple processes deployed on different servers, while others run as a single application process. When a monolithic application can’t be scaled out because one of its parts is unscalable, splitting the app into microservices allows you to horizontally scale the parts that allow scaling out, and scale the parts that don’t, vertically instead of horizontally.\nDeploying Microservices Microservices also have drawbacks\n many separate components → deployment-related decisions become increasingly difficult microservices perform work as a team( deploy new component → configure old components) hard to debug and trace execution calls( cause they span many process and machines)  Understand the divergence of environment requirements Deploying dynamically linked applications that require different versions of shared libraries, and/or require other environment specifics, can quickly become a nightmare for the ops team who deploys and manages them on production servers. The bigger the number of components you need to deploy on the same host, the harder it will be to manage all their dependencies to satisfy all their requirements.\n2. Providing a consistent environment to applications One of the biggest problems that dev and operation teams always have to deal with is the differences in the environment they run their apps in.\n different between production and development environments different between individual production machines environment machine will change over time.  These differences range from hardware to software( like OS) that are available on each machine. Production environments are managed by the operations team, while developers often take care of their development laptops on their own.\nII. Introducing to container technologies Understanding what containers are Isolation components with Linux Container technologies Instead of using virtual machines to isolate the environments of each microservice (or software processes in general), developers are turning to Linux container technologies. They allow you to run multiple services on the same host machine, while not only exposing a different environment to each of them, but also isolating them from each other, similarly to VMs, but with much less overhead.\nComparing VMs to Containers When you run three VMs on a host, you have three completely separate operating systems running on and sharing the same bare-metal hardware. Underneath those VMs is the host’s OS and a hypervisor, which divides the physical hardware resources into smaller sets of virtual resources that can be used by the operating system inside each VM.\n   VMs Container     When you run three VMs on a host, you have three completely separate operating systems running on and sharing the same bare-metal hardware. Underneath those VMs is the host’s OS and a hypervisor, which divides the physical hardware resources into smaller sets of virtual resources that can be used by the operating system inside each VMs. Containers, on the other hand, all perform system calls on the exact same kernel running in the host OS. The CPU doesn’t need to do any kind of virtualization the way it does with VMs   Full isolation - because each VM runs its own Linux kernel. Containers all call out to the same kernel, which can clearly pose a security risk.   If you have a limited amount of hardware resources, VMs may only be an option when you have a small number of processes that you want to isolate. To run greater numbers of isolated processes on the same machine, containers are a much better choice because of their low overhead.    What make Containers possible Two mechanisms make this possible\n  Linux Namespaces\nMakes sure each process sees its own personal view of the system (files, processes, network interfaces, hostname, and so on).\n  Linux Control Groups (cgroups)\nLimit the amount of resources the process can consume (CPU, memory, network bandwidth, and so on).\n  III. Giới thiệu về Kubernetes Chúng ta thấy được sự khó khăn trong việc quản lý các component( deployable application components) khi hệ thống dần được mở rộng. Google đã nhận thấy các công ty cần một cách tốt hơn để quản lý và depoy các components tốt hơn.\n1. Nguồn gốc Qua nhiều năm, Google đã phát triển một hệ thống gọi là Borg (sau này là Omega) giúp cho các nhà phát triển (dev) và admin hệ thống quản lý các hàng ngàn ứng dụng và service. Ngoài việc đơn giản hóa quá trình deploy và phát triển, nó còn giúp tối ưu hạ tầng cơ sở(infrastructure).\nNăm 2014, Google đã giới thiệu Kubernetes dựa trên kinh nghiệm phát triển Borg, Omega.\n2. Tổng quan về Kubernetes Kubernetes là một hệ thống phần mềm giúp chúng ta dễ dàng deploy và quản lý các ứng dụng chạy trong container(containerized application)\nNó có thể chạy các ứng dụng trong container mà không cần phải biết bất kì thông tin gì về chúng, đồng thời ta không phải deploy thủ công những ứng dụng này vào các host. Bởi vì các ứng dụng này được chạy trong các container khác nhau, chúng độc lập nhau → ta có thể chạy nhiều ứng dụng khác nhau trên 1 phần cứng.\nKubernetes cho phép bạn chạy ứng dụng trên hàng ngàn máy tính như đó chỉ là một máy tính duy nhất. Nó abstract đi hệ thống cơ sở hạ tầng bên dưới(infrastructure) → đơn giản hóa quá trình phát triển, deploy và maintain.\nDeploy một ứng dụng trên Kubernetes luôn giống nhau cho dù cluster đó có 1-2 node hoặc 1000 node.\nCốt lõi của Kubernetes Đây là góc nhìn đơn giản nhất về Kubernetes. Hệ thống bao gồm 1 master node và nhiều work node. Khi dev deploy hệ thống, Kubernete sẽ deploy chúng vào 1 cluster gồm các worker node. Node nào sẽ chạy components thì chúng ta (và cả admin hệ thống) không cần phải quan tâm.\nGiúp Developer tập trung vào các chức năng chính (core app features) Kubernetes giống như một hệ điều hành (OS) cho cluster. Nó giải phóng developer khỏi việc tự cài đặt các services về cơ sở hạ tầng, mà chỉ tập trung vào việc phát triển các chức năng của phần mềm. Thay vào đó, họ sẽ sử dụng các service có sẵn của Kubernetes - bao gồm scaling, load-balancing, self - healing,…\nGiúp đội ngũ vận hàng (Ops team) tối ưu tài nguyên 3. Kiến trúc của Kubernetes cluster Ở mức độ phần cứng, Kubernetes cluster được cấu thành từ nhiều node, chúng ta có thể phân loại thành 2 loại node:\n master node, có Kubernetes Control Plane để quán lý cả hệ thống Kubernetes worker node, để chạy ứng mà chúng ta deploy  Các thành phần tạo nên 1 Kubernetes cluster\nThe control plane - master node Giữ nhiệm vụ quản lý cluster mà giữ cho cluster hoạt động. Nó bao gồm các component:\n Kubernetes API Server: giúp ta giao tiếp với các component của control plane khác Scheduler: lập lịch cho ứng dụng (giao component cho cho một worker node) Controller Manager: Xử lí các chức năng ở mức cluster (cluster-level function) như quản lý các worker node, tái tạo các component, xử lý các node lỗi,… etdc: dữ liệu về các cài đặt cluster và trạng thái (state) của cluster  The control plane nắm giữ và quản lý các trạng thái của cluster, nhưng chúng không chạy các ứng dụng. Điều đó được thực hiện bởi worker node.\nWorker node Worker node là cỗ máy (machine) chạy các ứng dụng trong container. Các tác vụ vận hành, quản lý và cung cấp các dịch vụ cho ứng dụng được thực thi bởi các component sau:\n Docker, rkt hoặc là bất kì container runtime khác kubelet, giao tiếp với cluster và quản lý các container trên node Kubernetes Service Proxy (kube-proxy), cân bằng tải giữa các components  4. Chạy một ứng dụng trên Kubernetes Muốn chạy một ứng dụng trên Kubernetes, ta phải đóng gói nó lại thành một image container, push image đó lên image registry, và đăng miêu tả (description) về image đó lên Kubernetes API server.\nMô tả trong một container đang hoạt động Khi API server xử lí miêu tả về ứng dụng của bạn, Scheduler sẽ lập lịch tạo ra các container trên các work node dựa trên nguồn tài nguyên hiện có của bạn. Kubelet trên các node sẽ giao tiếp với với Kubernetes API Server để tải các image và chạy các image đó.\nGiữ cho các container luôn vận hành Khi ứng dụng được đưa vào hoạt động (deployed), Kubernetes sẽ liên tục đảm bảo rằng trạng thái của ứng dụng đúng với miêu tả mà bạn cung cấp. Ví dụ như bạn luôn muốn có 5 instance của web server hoạt động → Kubernetes sẽ luôn đảm bảo 5 instance. Nếu 1 instance ngừng hoạt động hay không phản hồi → Kubernetes sẽ tự restart nó\nTương tự, nếu 1 node chết đi → Kubernetes sẽ chọn 1 node khác và chạy lại tất cả container của nó.\nScaling các bản sao chép (copies) Khi ứng dụng đang chạy, bạn có thể quyết định tăng giảm số lượng copies tùy thích → Kubernetes sẽ cập nhật theo yêu cầu. Thậm chí, bạn có thể để Kubernetes điều này, dựa vào các thông số thực tế (real-times metrics) như CPU load, tiêu thụ bộ nhớ, lượng truy vấn từng giây,…\n5. Lợi ích của việc sử dụng Kubernetes Nếu bạn deploy Kubernetes trên tất cả server, đội ngũ vận hành (Ops team) sẽ không cần xử lí việc deploy các ứng dụng nữa. Bởi vì các ứng dụng chạy trong container (containerized application) đã được bổ sung các tất cả những gì nó cần để chạy → admin hệ thống không cần phải cài đặt thứ gì để deploy và chạy ứng dụng.\nĐơn giản hóa quá trình deploy Bởi vì Kubernetes cung cấp tất cả worker node như là một deployment platform, developer có thể bắt đầu deploy ứng dụng mà không cần biết gì về các server tạo nên cluster.\nMột vài trường hợp đặc biệt, như khi ta muốn ứng dụng của mình được chạy trên một node sử dụng SDD thay vì HDD.\n Nếu không sử dụng k8s → admin hệ thống sẽ phải chọn 1 node cụ thể và deploy ứng dụng ở đó Khi sử dụng k8s → ta có thể nói cho k8s chọn 1 node sử dụng SDD và k8s sẽ tự động vận hành theo yêu cầu.  Tối ưu phần cứng Bằng việc set up k8s trên server, chúng ta sẽ decouple ứng dụng khỏi kiến trúc. Khi ta yêu cầu k8s chạy ứng dụng, k8s sẽ chọn node phù hợp nhất dựa trên mô tả tài nguyên yêu cầu (description of the application’s resource requirements) và nguồn tài nguyên hiện có trên các node.\nBằng việc sử dụng các container và không cố định các node trên cluster, ta cho phép ứng dụng tự do vận chuyển trên cluster → các component khác nhau sẽ được sắp xếp sao cho tối ưu phần cứng nhất trên các node.\nKiểm tra và tự hồi phục Ứng dụng tự do vận chuyển trên cluster là một yếu tố đáng giá trong trường hợp các server của chúng ta bị hỏng (server failure). Nếu quy mô của cluster chúng ta tăng lên → các component sẽ vận hành thất bại thường xuyên hơn.\nKubernetes sẽ quản lý các node và các components đang chạy trên đó, và sẽ tự động lập lịch các components đó trên các node khác nếu server bị lỗi. Điều này cho phép đội vận hành tập trung vào việc xử lí vấn đề node lỗi thay vì phải tìm cách tích hợp các components cũ vào ứng dụng.\nAutomatic scaling Sử dụng Kubernetes để quản lý các ứng dụng đã deploy cho phép đội vận hành không cần phải liên tục quản lý lượng truy cập ứng dụng, Kubernetes sẽ quản lý nguồn tài nguyên sử dụng và liên tục cập nhật số lượng instance của mỗi ứng dụng\nNếu Kubernetes chạy trên cơ sở hạng tầng đám mây (cloud infrastructrue), việc thêm các node sẽ vô cùng đơn giản. Thậm chí, Kubernetes có thể tự động scale kích thước của cluster tùy vào nhu cầu của ứng dụng.\nĐơn giản quá trình phát triển Ứng dụng sẽ được phát triển và vận hành trong cùng một môi trường, điều này có ý nghĩa rất lớn trong việc phát hiện bugs. Đồng thời, developer không cần implemement các service mà Kubernetes đã cung cấp sẵn như cân bằng tải, tìm kiếm các service,…\nĐồng thời, Kubernetes cũng cung cấp thêm khả năng rollout lại ứng dụng, k8s có thể tự phát hiện nếu 1 version bị lỗi → tự rollout lập tức. Điều này tăng một tầng bảo đảm cho các developer.\nIV. Tổng kết  Monolithic app dễ deploy, nhưng khó maintain mà đôi khi là không thể scale Microservices kiến trúc cho phép phát triển mỗi component dễ hơn → khó deploy và configure để chúng tương tác với nhau như một hệ thống đơn nhất. Linux containers có đem lại lợi ích như VMs nhưng nhẹ hơn và cho phép tối ưu phần cứng tốt hơn. Kubernetes phơi bày (expose) cả datacenter như một single computational resource for running applications. Dev có thể deploy apps bằng k8s một cách đơn giản Admin hệ thống sẽ được sẽ được ngủ ngon hơn khi Kubernetes tự động xử lí khi server gặp sự cố.  ",
+  "wordCount" : "2403",
+  "inLanguage": "en",
+  "datePublished": "2022-04-03T01:35:07+07:00",
+  "dateModified": "2022-04-03T01:35:07+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://example.org/posts/introduces-26703/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blog stuff",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://example.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://example.org/" accesskey="h" title="Blog stuff (Alt + H)">Blog stuff</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://example.org/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://example.org/">Home</a>&nbsp;»&nbsp;<a href="http://example.org/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Second
+    </h1>
+    <div class="post-meta"><span title='2022-04-03 01:35:07 +0700 +07'>April 3, 2022</span>&nbsp;·&nbsp;12 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#introduces-to-kubernetes" aria-label="Introduces to Kubernetes">Introduces to Kubernetes</a></li>
+                <li>
+                    <a href="#i-the-need-of-kubernetes" aria-label="I. The need of Kubernetes">I. The need of Kubernetes</a><ul>
+                        
+                <li>
+                    <a href="#1-moving-from-monolithic-app-to-microservice" aria-label="1. Moving from monolithic app to microservice">1. Moving from monolithic app to microservice</a><ul>
+                        
+                <li>
+                    <a href="#splitting-apps-into-microservices" aria-label="Splitting Apps into Microservices">Splitting Apps into Microservices</a></li>
+                <li>
+                    <a href="#scaling-microservices" aria-label="Scaling Microservices">Scaling Microservices</a></li>
+                <li>
+                    <a href="#deploying-microservices" aria-label="Deploying Microservices">Deploying Microservices</a></li>
+                <li>
+                    <a href="#understand-the-divergence-of-environment-requirements" aria-label="Understand the divergence of environment requirements">Understand the divergence of environment requirements</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-providing-a-consistent-environment-to-applications" aria-label="2. Providing a consistent environment to applications">2. Providing a consistent environment to applications</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ii-introducing-to-container-technologies" aria-label="II. Introducing to container technologies">II. Introducing to container technologies</a><ul>
+                        
+                <li>
+                    <a href="#understanding-what-containers-are" aria-label="Understanding what containers are">Understanding what containers are</a><ul>
+                        
+                <li>
+                    <a href="#isolation-components-with-linux-container-technologies" aria-label="Isolation components with Linux Container technologies">Isolation components with Linux Container technologies</a></li>
+                <li>
+                    <a href="#comparing-vms-to-containers" aria-label="Comparing VMs to Containers">Comparing VMs to Containers</a></li>
+                <li>
+                    <a href="#what-make-containers-possible" aria-label="What make Containers possible">What make Containers possible</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#iii-gi%e1%bb%9bi-thi%e1%bb%87u-v%e1%bb%81-kubernetes" aria-label="III. Giới thiệu về Kubernetes">III. Giới thiệu về Kubernetes</a><ul>
+                        
+                <li>
+                    <a href="#1-ngu%e1%bb%93n-g%e1%bb%91c" aria-label="1. Nguồn gốc">1. Nguồn gốc</a></li>
+                <li>
+                    <a href="#2-t%e1%bb%95ng-quan-v%e1%bb%81-kubernetes" aria-label="2. Tổng quan về Kubernetes">2. Tổng quan về Kubernetes</a><ul>
+                        
+                <li>
+                    <a href="#c%e1%bb%91t-l%c3%b5i-c%e1%bb%a7a-kubernetes" aria-label="Cốt lõi của Kubernetes">Cốt lõi của Kubernetes</a></li>
+                <li>
+                    <a href="#gi%c3%bap-developer-t%e1%ba%adp-trung-v%c3%a0o-c%c3%a1c-ch%e1%bb%a9c-n%c4%83ng-ch%c3%adnh-core-app-features" aria-label="Giúp Developer tập trung vào các chức năng chính (core app features)">Giúp Developer tập trung vào các chức năng chính (core app features)</a></li>
+                <li>
+                    <a href="#gi%c3%bap-%c4%91%e1%bb%99i-ng%c5%a9-v%e1%ba%adn-h%c3%a0ng-ops-team-t%e1%bb%91i-%c6%b0u-t%c3%a0i-nguy%c3%aan" aria-label="Giúp đội ngũ vận hàng (Ops team) tối ưu tài nguyên">Giúp đội ngũ vận hàng (Ops team) tối ưu tài nguyên</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-ki%e1%ba%bfn-tr%c3%bac-c%e1%bb%a7a-kubernetes-cluster" aria-label="3. Kiến trúc của Kubernetes cluster">3. Kiến trúc của Kubernetes cluster</a><ul>
+                        
+                <li>
+                    <a href="#the-control-plane---master-node" aria-label="The control plane - master node">The control plane - master node</a></li>
+                <li>
+                    <a href="#worker-node" aria-label="Worker node">Worker node</a></li></ul>
+                </li>
+                <li>
+                    <a href="#4-ch%e1%ba%a1y-m%e1%bb%99t-%e1%bb%a9ng-d%e1%bb%a5ng-tr%c3%aan-kubernetes" aria-label="4. Chạy một ứng dụng trên Kubernetes">4. Chạy một ứng dụng trên Kubernetes</a><ul>
+                        
+                <li>
+                    <a href="#m%c3%b4-t%e1%ba%a3-trong-m%e1%bb%99t-container-%c4%91ang-ho%e1%ba%a1t-%c4%91%e1%bb%99ng" aria-label="Mô tả trong một container đang hoạt động">Mô tả trong một container đang hoạt động</a></li>
+                <li>
+                    <a href="#gi%e1%bb%af-cho-c%c3%a1c-container-lu%c3%b4n-v%e1%ba%adn-h%c3%a0nh" aria-label="Giữ cho các container luôn vận hành">Giữ cho các container luôn vận hành</a></li>
+                <li>
+                    <a href="#scaling-c%c3%a1c-b%e1%ba%a3n-sao-ch%c3%a9p-copies" aria-label="Scaling các bản sao chép (copies)">Scaling các bản sao chép (copies)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#5-l%e1%bb%a3i-%c3%adch-c%e1%bb%a7a-vi%e1%bb%87c-s%e1%bb%ad-d%e1%bb%a5ng-kubernetes" aria-label="5. Lợi ích của việc sử dụng Kubernetes">5. Lợi ích của việc sử dụng Kubernetes</a><ul>
+                        
+                <li>
+                    <a href="#%c4%91%c6%a1n-gi%e1%ba%a3n-h%c3%b3a-qu%c3%a1-tr%c3%acnh-deploy" aria-label="Đơn giản hóa quá trình deploy">Đơn giản hóa quá trình deploy</a></li>
+                <li>
+                    <a href="#t%e1%bb%91i-%c6%b0u-ph%e1%ba%a7n-c%e1%bb%a9ng" aria-label="Tối ưu phần cứng">Tối ưu phần cứng</a></li>
+                <li>
+                    <a href="#ki%e1%bb%83m-tra-v%c3%a0-t%e1%bb%b1-h%e1%bb%93i-ph%e1%bb%a5c" aria-label="Kiểm tra và tự hồi phục">Kiểm tra và tự hồi phục</a></li>
+                <li>
+                    <a href="#automatic-scaling" aria-label="Automatic scaling">Automatic scaling</a></li>
+                <li>
+                    <a href="#%c4%91%c6%a1n-gi%e1%ba%a3n-qu%c3%a1-tr%c3%acnh-ph%c3%a1t-tri%e1%bb%83n" aria-label="Đơn giản quá trình phát triển">Đơn giản quá trình phát triển</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#iv-t%e1%bb%95ng-k%e1%ba%bft" aria-label="IV. Tổng kết">IV. Tổng kết</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="introduces-to-kubernetes">Introduces to Kubernetes<a hidden class="anchor" aria-hidden="true" href="#introduces-to-kubernetes">#</a></h1>
+<h1 id="i-the-need-of-kubernetes">I. The need of Kubernetes<a hidden class="anchor" aria-hidden="true" href="#i-the-need-of-kubernetes">#</a></h1>
+<h2 id="1-moving-from-monolithic-app-to-microservice">1. Moving from monolithic app to microservice<a hidden class="anchor" aria-hidden="true" href="#1-moving-from-monolithic-app-to-microservice">#</a></h2>
+<p>Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed,  and managed as one entity, because they all run as a single OS process.</p>
+<ul>
+<li>If changes → redeployment</li>
+<li>Requires small number of <strong>powerful servers</strong></li>
+<li>Increasing loads → vertical scale → add more CPUs, memory&hellip;</li>
+</ul>
+<h3 id="splitting-apps-into-microservices">Splitting Apps into Microservices<a hidden class="anchor" aria-hidden="true" href="#splitting-apps-into-microservices">#</a></h3>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%202.png" alt="Untitled"  />
+</p>
+<p>These and other problems have forced us to start splitting complex monolithic applications into smaller <strong>independently deployable components</strong> called microservices.</p>
+<p>Each microservice runs as an <strong>independent</strong> process (see figure 1.1) and communicates with other microservices through simple, well-defined interfaces, it’s possible to develop and deploy each microservice separately.</p>
+<h3 id="scaling-microservices">Scaling Microservices<a hidden class="anchor" aria-hidden="true" href="#scaling-microservices">#</a></h3>
+<p>Scaling microservices, unlike monolithic systems, where you need to scale the system as a whole, is done on a per-service basis, which means you have the option of <strong>scaling only those services that require more resources</strong>, while leaving others at their original scale.</p>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%201.png" alt="Untitled"  />
+</p>
+<p>Certain components are replicated and run as multiple processes deployed on different servers, while others run as a single application process. When a monolithic application can’t be scaled out because one of its parts is unscalable, splitting the app into microservices allows you to horizontally scale the parts that allow scaling out, and scale the parts that don’t, vertically instead of horizontally.</p>
+<h3 id="deploying-microservices">Deploying Microservices<a hidden class="anchor" aria-hidden="true" href="#deploying-microservices">#</a></h3>
+<p>Microservices also have drawbacks</p>
+<ul>
+<li>many separate components →  deployment-related decisions become increasingly difficult</li>
+<li>microservices perform work as a team( deploy new component → configure old components)</li>
+<li>hard to debug and trace execution calls( cause they span many process and machines)</li>
+</ul>
+<h3 id="understand-the-divergence-of-environment-requirements">Understand the divergence of environment requirements<a hidden class="anchor" aria-hidden="true" href="#understand-the-divergence-of-environment-requirements">#</a></h3>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%202.png" alt="Untitled"  />
+</p>
+<p>Deploying  dynamically  linked  applications  that  require  different  versions  of  shared libraries,  and/or  require  other  environment  specifics,  can  quickly  become  a  nightmare  for  the  ops  team  who  deploys  and  manages  them  on  production  servers.  The bigger the number of components you need to deploy on the same host, the harder it will be to manage all their dependencies to satisfy all their requirements.</p>
+<h2 id="2-providing-a-consistent-environment-to-applications">2. Providing a consistent environment to applications<a hidden class="anchor" aria-hidden="true" href="#2-providing-a-consistent-environment-to-applications">#</a></h2>
+<p>One of the biggest problems that dev and operation teams always have to deal with is the <strong>differences in the environment they run their apps in</strong>.</p>
+<ul>
+<li>different between production and development environments</li>
+<li>different between individual production machines</li>
+<li>environment machine will change over time.</li>
+</ul>
+<p>These differences range from hardware to software( like OS) that are available on each machine. Production environments  are  managed  by  the operations team, while developers often take care of their  development laptops on their own.</p>
+<h1 id="ii-introducing-to-container-technologies">II. Introducing to container technologies<a hidden class="anchor" aria-hidden="true" href="#ii-introducing-to-container-technologies">#</a></h1>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%203.png" alt="Untitled"  />
+</p>
+<h2 id="understanding-what-containers-are">Understanding what containers are<a hidden class="anchor" aria-hidden="true" href="#understanding-what-containers-are">#</a></h2>
+<h3 id="isolation-components-with-linux-container-technologies">Isolation components with Linux Container technologies<a hidden class="anchor" aria-hidden="true" href="#isolation-components-with-linux-container-technologies">#</a></h3>
+<p>Instead of using virtual machines to isolate the environments of each microservice (or software  processes  in  general),  developers  are  turning  to  Linux  container  technologies. They allow you to run multiple services on the same host machine, while not only exposing a different environment to each of them, but also isolating them from each other, similarly to VMs, but with much less overhead.</p>
+<h3 id="comparing-vms-to-containers">Comparing VMs to Containers<a hidden class="anchor" aria-hidden="true" href="#comparing-vms-to-containers">#</a></h3>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%204.png" alt="Untitled"  />
+</p>
+<p>When you run three VMs on a host, you have three completely separate operating systems running on and sharing the same bare-metal hardware. Underneath those VMs is the host’s OS and a hypervisor, which divides the physical hardware resources into smaller sets of virtual resources that can be used by the operating system inside each VM.</p>
+<table>
+<thead>
+<tr>
+<th>VMs</th>
+<th>Container</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When you run three VMs on a host, you have three completely separate operating systems running on and sharing the same bare-metal hardware. Underneath those VMs is the host’s OS and a hypervisor, which divides the physical hardware resources into smaller sets of virtual resources that can be used by the operating system inside each VMs.</td>
+<td>Containers, on the other hand, all perform system calls on the exact same kernel running in the host OS. The CPU doesn’t need to do any kind of virtualization the way it does with VMs</td>
+</tr>
+<tr>
+<td>Full isolation - because each VM runs its own Linux kernel.</td>
+<td>Containers all call out to the same kernel, which can clearly pose a security risk.</td>
+</tr>
+<tr>
+<td>If you have a limited amount of hardware resources, VMs may only be an option when you have a small number of processes that you want to isolate.</td>
+<td>To run greater numbers of isolated processes on the same machine, containers are a much better choice because of their low overhead.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-make-containers-possible">What make Containers possible<a hidden class="anchor" aria-hidden="true" href="#what-make-containers-possible">#</a></h3>
+<p>Two mechanisms make this possible</p>
+<ul>
+<li>
+<p>Linux Namespaces</p>
+<p>Makes sure each process sees its own personal view of the  system  (files,  processes,  network  interfaces,  hostname,  and  so  on).</p>
+</li>
+<li>
+<p>Linux Control Groups (cgroups)</p>
+<p>Limit the amount of resources the process can consume (CPU, memory, network bandwidth, and so on).</p>
+</li>
+</ul>
+<h1 id="iii-giới-thiệu-về-kubernetes">III. Giới thiệu về Kubernetes<a hidden class="anchor" aria-hidden="true" href="#iii-giới-thiệu-về-kubernetes">#</a></h1>
+<p>Chúng ta thấy được sự khó khăn trong việc quản lý các component( deployable application components) khi hệ thống dần được mở rộng. Google đã nhận thấy các công ty cần một cách tốt hơn để quản lý và depoy các components tốt hơn.</p>
+<h2 id="1-nguồn-gốc">1. Nguồn gốc<a hidden class="anchor" aria-hidden="true" href="#1-nguồn-gốc">#</a></h2>
+<p>Qua nhiều năm, Google đã phát triển một hệ thống gọi là <strong>Borg</strong> (sau này là Omega) giúp cho các nhà phát triển (dev) và admin hệ thống quản lý các hàng ngàn ứng dụng và service. Ngoài việc đơn giản hóa quá trình deploy và phát triển, nó còn giúp tối ưu hạ tầng cơ sở(infrastructure).</p>
+<p>Năm 2014, Google đã giới thiệu Kubernetes dựa trên kinh nghiệm phát triển Borg, Omega.</p>
+<h2 id="2-tổng-quan-về-kubernetes">2. Tổng quan về Kubernetes<a hidden class="anchor" aria-hidden="true" href="#2-tổng-quan-về-kubernetes">#</a></h2>
+<p>Kubernetes là một hệ thống phần mềm giúp chúng ta dễ dàng deploy và quản lý các <strong>ứng dụng chạy trong container</strong>(containerized application)</p>
+<p>Nó có thể chạy các ứng dụng trong container mà không cần phải biết bất kì thông tin gì về chúng, đồng thời ta không phải deploy thủ công những ứng dụng này vào các host. Bởi vì các ứng dụng này được chạy trong các container khác nhau, chúng độc lập nhau → ta có thể chạy nhiều ứng dụng khác nhau trên 1 phần cứng.</p>
+<p>Kubernetes cho phép bạn chạy ứng dụng trên hàng ngàn máy tính như đó chỉ là một máy tính duy nhất. Nó abstract đi hệ thống cơ sở hạ tầng bên dưới(infrastructure) → đơn giản hóa quá trình phát triển, deploy và maintain.</p>
+<p>Deploy một ứng dụng trên Kubernetes luôn giống nhau cho dù cluster đó có 1-2 node hoặc 1000 node.</p>
+<h3 id="cốt-lõi-của-kubernetes">Cốt lõi của Kubernetes<a hidden class="anchor" aria-hidden="true" href="#cốt-lõi-của-kubernetes">#</a></h3>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%205.png" alt="Untitled"  />
+</p>
+<p>Đây là góc nhìn đơn giản nhất về Kubernetes. Hệ thống bao gồm 1 <strong>master node</strong> và nhiều <strong>work node</strong>. Khi dev deploy hệ thống, Kubernete sẽ deploy chúng vào 1 cluster gồm các worker node. Node nào sẽ chạy components thì chúng ta (và cả admin hệ thống) không cần phải quan tâm.</p>
+<h3 id="giúp-developer-tập-trung-vào-các-chức-năng-chính-core-app-features">Giúp Developer tập trung vào các chức năng chính (core app features)<a hidden class="anchor" aria-hidden="true" href="#giúp-developer-tập-trung-vào-các-chức-năng-chính-core-app-features">#</a></h3>
+<p>Kubernetes giống như một hệ điều hành (OS) cho <strong>cluster</strong>. Nó giải phóng developer khỏi việc tự cài đặt các <strong>services về cơ sở hạ tầng</strong>, mà chỉ tập trung vào việc phát triển các chức năng của phần mềm. Thay vào đó, họ sẽ sử dụng các service có sẵn của Kubernetes - bao gồm scaling, load-balancing, self - healing,&hellip;</p>
+<h3 id="giúp-đội-ngũ-vận-hàng-ops-team-tối-ưu-tài-nguyên">Giúp đội ngũ vận hàng (Ops team) tối ưu tài nguyên<a hidden class="anchor" aria-hidden="true" href="#giúp-đội-ngũ-vận-hàng-ops-team-tối-ưu-tài-nguyên">#</a></h3>
+<h2 id="3-kiến-trúc-của-kubernetes-cluster">3. Kiến trúc của Kubernetes cluster<a hidden class="anchor" aria-hidden="true" href="#3-kiến-trúc-của-kubernetes-cluster">#</a></h2>
+<p>Ở mức độ phần cứng, Kubernetes cluster được cấu thành từ nhiều <strong>node</strong>, chúng ta có thể phân loại thành 2 loại node:</p>
+<ol>
+<li>master node, có <strong>Kubernetes Control Plane</strong> để quán lý cả hệ thống Kubernetes</li>
+<li>worker node, để chạy ứng mà chúng ta deploy</li>
+</ol>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%206.png" alt="Các thành phần tạo nên 1 Kubernetes cluster"  />
+</p>
+<p>Các thành phần tạo nên 1 Kubernetes cluster</p>
+<h3 id="the-control-plane---master-node">The control plane - master node<a hidden class="anchor" aria-hidden="true" href="#the-control-plane---master-node">#</a></h3>
+<p>Giữ nhiệm vụ quản lý cluster mà giữ cho cluster hoạt động. Nó bao gồm các component:</p>
+<ul>
+<li><strong>Kubernetes API Server</strong>: giúp ta giao tiếp với các component của control plane khác</li>
+<li><strong>Scheduler</strong>: lập lịch cho ứng dụng (giao component cho cho một worker node)</li>
+<li><strong>Controller Manager</strong>: Xử lí các chức năng ở mức cluster (cluster-level function) như quản lý các worker node, tái tạo các component, xử lý các node lỗi,&hellip;</li>
+<li><strong>etdc</strong>: dữ liệu về các cài đặt cluster và trạng thái (state) của cluster</li>
+</ul>
+<p>The control plane nắm giữ và quản lý các trạng thái của cluster, nhưng chúng không chạy các ứng dụng. Điều đó được thực hiện bởi worker node.</p>
+<h3 id="worker-node">Worker node<a hidden class="anchor" aria-hidden="true" href="#worker-node">#</a></h3>
+<p>Worker node là cỗ máy (machine) chạy các ứng dụng trong container. Các tác vụ vận hành, quản lý và cung cấp các dịch vụ cho ứng dụng được thực thi bởi các component sau:</p>
+<ul>
+<li>Docker, rkt hoặc là bất kì container runtime khác</li>
+<li>kubelet, giao tiếp với cluster và quản lý các container trên node</li>
+<li>Kubernetes Service Proxy (kube-proxy), cân bằng tải giữa các components</li>
+</ul>
+<h2 id="4-chạy-một-ứng-dụng-trên-kubernetes">4. Chạy một ứng dụng trên Kubernetes<a hidden class="anchor" aria-hidden="true" href="#4-chạy-một-ứng-dụng-trên-kubernetes">#</a></h2>
+<p>Muốn chạy một ứng dụng trên Kubernetes, ta phải đóng gói nó lại thành một image container, push image đó lên image registry, và đăng miêu tả (description) về image đó lên <strong>Kubernetes API server</strong>.</p>
+<h3 id="mô-tả-trong-một-container-đang-hoạt-động">Mô tả trong một container đang hoạt động<a hidden class="anchor" aria-hidden="true" href="#mô-tả-trong-một-container-đang-hoạt-động">#</a></h3>
+<p><img loading="lazy" src="/Introduces%2026703/Untitled%207.png" alt="Untitled"  />
+</p>
+<p>Khi API server xử lí miêu tả về ứng dụng của bạn, Scheduler sẽ lập lịch tạo ra các container trên các work node dựa trên nguồn tài nguyên hiện có của bạn. <strong>Kubelet</strong> trên các node sẽ giao tiếp với với Kubernetes API Server để tải các image và chạy các image đó.</p>
+<h3 id="giữ-cho-các-container-luôn-vận-hành">Giữ cho các container luôn vận hành<a hidden class="anchor" aria-hidden="true" href="#giữ-cho-các-container-luôn-vận-hành">#</a></h3>
+<p>Khi ứng dụng được đưa vào hoạt động (deployed), Kubernetes sẽ liên tục đảm bảo rằng trạng thái của ứng dụng đúng với miêu tả mà bạn cung cấp. Ví dụ như bạn luôn muốn có 5 instance của web server hoạt động → Kubernetes sẽ luôn đảm bảo 5 instance. Nếu 1 instance ngừng hoạt động hay không phản hồi → Kubernetes sẽ tự restart nó</p>
+<p>Tương tự, nếu 1 node chết đi → Kubernetes sẽ chọn 1 node khác và chạy lại tất cả container của nó.</p>
+<h3 id="scaling-các-bản-sao-chép-copies">Scaling các bản sao chép (copies)<a hidden class="anchor" aria-hidden="true" href="#scaling-các-bản-sao-chép-copies">#</a></h3>
+<p>Khi ứng dụng đang chạy, bạn có thể quyết định tăng giảm số lượng copies tùy thích → Kubernetes sẽ cập nhật theo yêu cầu. Thậm chí, bạn có thể để Kubernetes điều này, dựa vào các thông số thực tế (real-times metrics) như CPU load, tiêu thụ bộ nhớ, lượng truy vấn từng giây,&hellip;</p>
+<h2 id="5-lợi-ích-của-việc-sử-dụng-kubernetes">5. Lợi ích của việc sử dụng Kubernetes<a hidden class="anchor" aria-hidden="true" href="#5-lợi-ích-của-việc-sử-dụng-kubernetes">#</a></h2>
+<p>Nếu bạn deploy Kubernetes trên tất cả server, đội ngũ vận hành (Ops team) sẽ không cần xử lí việc deploy các ứng dụng nữa. Bởi vì các ứng dụng chạy trong container (containerized application) đã được bổ sung các tất cả những gì nó cần để chạy → admin hệ thống không cần phải cài đặt thứ gì để deploy và chạy ứng dụng.</p>
+<h3 id="đơn-giản-hóa-quá-trình-deploy">Đơn giản hóa quá trình deploy<a hidden class="anchor" aria-hidden="true" href="#đơn-giản-hóa-quá-trình-deploy">#</a></h3>
+<p>Bởi vì Kubernetes cung cấp tất cả worker node như là một <strong>deployment platform</strong>, developer có thể bắt đầu deploy ứng dụng mà không cần biết gì về các server tạo nên cluster.</p>
+<p>Một vài trường hợp đặc biệt, như khi ta muốn ứng dụng của mình được chạy trên một node sử dụng SDD thay vì HDD.</p>
+<ul>
+<li>Nếu không sử dụng k8s → admin hệ thống sẽ phải chọn 1 node cụ thể và deploy ứng dụng ở đó</li>
+<li>Khi sử dụng k8s → ta có thể nói cho k8s chọn 1 node sử dụng SDD và k8s sẽ tự động vận hành theo yêu cầu.</li>
+</ul>
+<h3 id="tối-ưu-phần-cứng">Tối ưu phần cứng<a hidden class="anchor" aria-hidden="true" href="#tối-ưu-phần-cứng">#</a></h3>
+<p>Bằng việc set up k8s trên server, chúng ta sẽ decouple ứng dụng khỏi kiến trúc. Khi ta yêu cầu k8s chạy ứng dụng, k8s sẽ chọn node phù hợp nhất dựa trên <strong>mô tả tài nguyên yêu cầu</strong> (description  of  the  application’s resource requirements) và <strong>nguồn tài nguyên hiện có trên các node</strong>.</p>
+<p>Bằng việc sử dụng các container và không cố định các node trên cluster, ta cho phép ứng dụng tự do vận chuyển trên cluster → các component khác nhau sẽ được sắp xếp sao cho tối ưu phần cứng nhất trên các node.</p>
+<h3 id="kiểm-tra-và-tự-hồi-phục">Kiểm tra và tự hồi phục<a hidden class="anchor" aria-hidden="true" href="#kiểm-tra-và-tự-hồi-phục">#</a></h3>
+<p>Ứng dụng tự do vận chuyển trên cluster là một yếu tố đáng giá trong trường hợp các server của chúng ta bị hỏng (server failure). Nếu quy mô của cluster chúng ta tăng lên → các component sẽ vận hành thất bại thường xuyên hơn.</p>
+<p>Kubernetes sẽ quản lý các node và các components đang chạy trên đó, và sẽ tự động lập lịch các components đó trên các node khác nếu server bị lỗi. Điều này cho phép đội vận hành tập trung vào việc xử lí vấn đề node lỗi thay vì phải tìm cách tích hợp các components cũ vào ứng dụng.</p>
+<h3 id="automatic-scaling">Automatic scaling<a hidden class="anchor" aria-hidden="true" href="#automatic-scaling">#</a></h3>
+<p>Sử dụng Kubernetes để quản lý các ứng dụng đã deploy cho phép đội vận hành không cần phải liên tục quản lý lượng truy cập ứng dụng, Kubernetes sẽ quản lý nguồn tài nguyên sử dụng và liên tục cập nhật  số lượng instance của mỗi ứng dụng</p>
+<p>Nếu Kubernetes chạy trên cơ sở hạng tầng đám mây (cloud infrastructrue), việc thêm các node sẽ vô cùng đơn giản. Thậm chí, Kubernetes có thể tự động scale kích thước của cluster tùy vào nhu cầu của ứng dụng.</p>
+<h3 id="đơn-giản-quá-trình-phát-triển">Đơn giản quá trình phát triển<a hidden class="anchor" aria-hidden="true" href="#đơn-giản-quá-trình-phát-triển">#</a></h3>
+<p>Ứng dụng sẽ được phát triển và vận hành trong cùng một môi trường, điều này có ý nghĩa rất lớn trong việc phát hiện bugs. Đồng thời, developer không cần implemement các service mà Kubernetes đã cung cấp sẵn như cân bằng tải, tìm kiếm các service,&hellip;</p>
+<p>Đồng thời, Kubernetes cũng cung cấp thêm khả năng rollout lại ứng dụng, k8s có thể tự phát hiện nếu 1 version bị lỗi → tự rollout lập tức. Điều này tăng một tầng bảo đảm cho các developer.</p>
+<h1 id="iv-tổng-kết">IV. Tổng kết<a hidden class="anchor" aria-hidden="true" href="#iv-tổng-kết">#</a></h1>
+<ul>
+<li>Monolithic app dễ deploy, nhưng khó maintain mà đôi khi là không thể scale</li>
+<li>Microservices kiến trúc cho phép phát triển mỗi component dễ hơn → khó deploy và configure để chúng tương tác với nhau như một hệ thống đơn nhất.</li>
+<li>Linux containers có đem lại lợi ích như VMs nhưng nhẹ hơn và cho phép tối ưu phần cứng tốt hơn.</li>
+<li>Kubernetes phơi bày (expose) cả datacenter như một single  computational  resource for running applications.</li>
+<li>Dev có thể deploy apps bằng k8s một cách đơn giản</li>
+<li>Admin hệ thống sẽ được sẽ được ngủ ngon hơn khi Kubernetes tự động xử lí khi server gặp sự cố.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="prev" href="http://example.org/posts/introduces-26703-copy/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>Second</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Second on twitter"
+        href="https://twitter.com/intent/tweet/?text=Second&amp;url=http%3a%2f%2fexample.org%2fposts%2fintroduces-26703%2f&amp;hashtags=">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Second on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fexample.org%2fposts%2fintroduces-26703%2f&amp;title=Second&amp;summary=Second&amp;source=http%3a%2f%2fexample.org%2fposts%2fintroduces-26703%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Second on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2fintroduces-26703%2f&title=Second">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Second on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2fintroduces-26703%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Second on whatsapp"
+        href="https://api.whatsapp.com/send?text=Second%20-%20http%3a%2f%2fexample.org%2fposts%2fintroduces-26703%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Second on telegram"
+        href="https://telegram.me/share/url?text=Second&amp;url=http%3a%2f%2fexample.org%2fposts%2fintroduces-26703%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="http://example.org/">Blog stuff</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

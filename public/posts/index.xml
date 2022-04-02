@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Blog stuff</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on Blog stuff</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Apr 2022 01:35:07 +0700</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First</title>
+      <link>http://example.org/posts/first/</link>
+      <pubDate>Sun, 03 Apr 2022 01:35:07 +0700</pubDate>
+      
+      <guid>http://example.org/posts/first/</guid>
+      <description>Sieu nhan dien quang </description>
+    </item>
+    
+    <item>
+      <title>Second</title>
+      <link>http://example.org/posts/introduces-26703-copy/</link>
+      <pubDate>Sun, 03 Apr 2022 01:35:07 +0700</pubDate>
+      
+      <guid>http://example.org/posts/introduces-26703-copy/</guid>
+      <description>Introduces to Kubernetes I. The need of Kubernetes 1. Moving from monolithic app to microservice Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed, and managed as one entity, because they all run as a single OS process.
+ If changes → redeployment Requires small number of powerful servers Increasing loads → vertical scale → add more CPUs, memory&amp;hellip;  Splitting Apps into Microservices These and other problems have forced us to start splitting complex monolithic applications into smaller independently deployable components called microservices.</description>
+    </item>
+    
+    <item>
+      <title>Second</title>
+      <link>http://example.org/posts/introduces-26703/</link>
+      <pubDate>Sun, 03 Apr 2022 01:35:07 +0700</pubDate>
+      
+      <guid>http://example.org/posts/introduces-26703/</guid>
+      <description>Introduces to Kubernetes I. The need of Kubernetes 1. Moving from monolithic app to microservice Monolithic applications consist of components that are all tightly coupled together and have to be developed, deployed, and managed as one entity, because they all run as a single OS process.
+ If changes → redeployment Requires small number of powerful servers Increasing loads → vertical scale → add more CPUs, memory&amp;hellip;  Splitting Apps into Microservices These and other problems have forced us to start splitting complex monolithic applications into smaller independently deployable components called microservices.</description>
+    </item>
+    
+  </channel>
+</rss>
