@@ -13,3 +13,5 @@ fields:
   label: White
   hidden: false
   description: "----<br>title <br>---"
+pages:
+- content/posts/3.md.md
