@@ -27,3 +27,5 @@ fields:
     schema:
       format: markdown
   label: content
+pages:
+- content/posts/sieu-nhan-dien-quang.md
