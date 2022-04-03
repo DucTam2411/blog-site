@@ -33,5 +33,13 @@ fields:
   config:
     required: true
   label: Author
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: categories
+  type: tag_list
+  default: []
+  label: Categories
 pages:
 - content/english/posts/why-to-care-about-privacy-after-years-of-sharing-data.md
