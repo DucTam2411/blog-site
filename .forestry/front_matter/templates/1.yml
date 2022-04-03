@@ -28,12 +28,11 @@ fields:
       format: markdown
   label: content
   hidden: true
-- name: cover
-  type: file
+- name: author
+  type: text
   config:
-    maxSize: 64
-  label: cover
-  description: 'Please use a image '
+    required: true
+  label: Author
 pages:
 - content/posts/sieu-nhan-dien-quang.md
 - content/posts/this-is-the-title.md
