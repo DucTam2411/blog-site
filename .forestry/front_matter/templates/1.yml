@@ -27,6 +27,7 @@ fields:
     schema:
       format: markdown
   label: content
+  hidden: true
 - name: cover
   type: file
   config:
