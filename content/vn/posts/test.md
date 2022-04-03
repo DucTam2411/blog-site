@@ -7,4 +7,4 @@ tags = ["html", "css", "angular", "frontend"]
 title = ""
 
 +++
-Checking infor
+Checking info
