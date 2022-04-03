@@ -15,7 +15,7 @@ sections:
   create: all
   match: "*"
 - type: directory
-  path: conent/en/posts
+  path: content/en/posts
   label: 'Post EN '
   create: all
   match: "*"
