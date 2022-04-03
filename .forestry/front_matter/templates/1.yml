@@ -33,3 +33,5 @@ fields:
   config:
     required: true
   label: Author
+pages:
+- content/english/posts/why-to-care-about-privacy-after-years-of-sharing-data.md
