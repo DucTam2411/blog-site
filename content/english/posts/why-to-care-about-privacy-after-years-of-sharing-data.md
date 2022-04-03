@@ -1,7 +1,10 @@
 +++
 author = "Hacker news"
+categories = []
 content = ""
 date = 2022-04-03T18:31:06Z
+showToc = ""
+tags = ["privacy"]
 title = "Why to Care About Privacy After Years of Sharing Data"
 
 +++
