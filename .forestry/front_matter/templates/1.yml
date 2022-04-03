@@ -33,3 +33,5 @@ fields:
   config:
     required: true
   label: Author
+pages:
+- content/en/posts/en-post-here-bro.md
