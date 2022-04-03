@@ -1,6 +1,6 @@
 ---
-label: '1'
-hide_body: false
+label: article
+hide_body: true
 fields:
 - name: title
   type: text
