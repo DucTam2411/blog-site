@@ -14,7 +14,11 @@ languages:
       navigation:
         help: Aide
     title: Sieu nhan
+    languageCode: en-us
     weight: 2
+    homeInfoParams:
+      Title: "Xin chào"
+      Content: "Yoyo"
 
 params:
   custom_css: ["css/extended/custom.css"]
