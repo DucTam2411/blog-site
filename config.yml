@@ -19,24 +19,24 @@ languages:
     homeInfoParams:
       Title: "Xin chào"
       Content: "Yoyo"
-  menu:
-    main:
-      - identifier: Phân loại
-        name: tìm kiếm
-        url: /categories/
-        weight: 10
-      - identifier: Tags
-        name: Tags
-        url: /tags/
-        weight: 20
-      - identifier: Tổng hợp
-        name: Tổng hợp
-        url: /archives/
-        weight: 30
-      - identifier: Tìm kiếm
-        name: Tìm kiếm
-        url: /search
-        weight: 5
+    menu:
+      main:
+        - identifier: Phân loại
+          name: Phân loại
+          url: /categories/
+          weight: 10
+        - identifier: Tags
+          name: Tags
+          url: /tags/
+          weight: 20
+        - identifier: Tổng hợp
+          name: Tổng hợp
+          url: /archives/
+          weight: 30
+        - identifier: Tìm kiếm
+          name: Tìm kiếm
+          url: /search
+          weight: 5
 
 params:
   custom_css: ["css/extended/custom.css"]
@@ -78,7 +78,7 @@ menu:
       weight: 20
     - identifier: archives
       name: Archives
-      url: /archives/
+      url: /archives.en/
       weight: 30
     - identifier: search
       name: Search
