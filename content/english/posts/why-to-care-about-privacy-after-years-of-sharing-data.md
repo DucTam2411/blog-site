@@ -10,6 +10,8 @@ title = "Why to Care About Privacy After Years of Sharing Data"
 +++
 I have a thought experiment for you. Pretend you’re driving somewhere local. A friend’s house, your favorite store, the office, whatever. You’re on autopilot, you’re not really paying attention. You reach a stop sign, take a left, and keep going. After about five or ten minutes, you snap out your highway hypnosis and go “oh wait, this isn’t the way to get where I’m going. This is the way to get to \[another place I frequent\]!” Do you just keep going?
 
+![](https://i.pinimg.com/originals/ba/50/16/ba5016d0ae0aed9f250f02aa8e6edbe1.gif)
+
 The answer is “of course not!” That’s totally ridiculous. If you know you’re doing something wrong, why would you keep doing it? And yet, that’s exactly what many people ask. A common pushback against privacy is “well they’ve already got so much data about me already, would changing now really do any good?” The answer is a instant, emphatic “yes” and I can think of two good reasons for this.
 
 ## Ethical
