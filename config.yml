@@ -1,10 +1,9 @@
+---
 baseURL: https://glittering-kataifi-d0efb3.netlify.app/
 languageCode: en-us
 title: Blog stuff
 theme: PaperMod
-
 languages:
-  # set up for English
   en:
     contentDir: content/english
     languageName: English
@@ -12,61 +11,57 @@ languages:
       linkedin: https://linkedin.com/whoever
     title: My blog
     weight: 10
-
     menu:
       main:
-        - identifier: categories
-          name: Categories
-          url: /categories/
-          weight: 10
-        - identifier: tags
-          name: Tags
-          url: /tags/
-          weight: 20
-        - identifier: archives
-          name: Archives
-          url: /archives/
-          weight: 30
-        - identifier: search
-          name: Search
-          url: /search
-          weight: 5
-
-  # set up for VIETNAMESE
+      - identifier: categories
+        name: Categories
+        url: "/categories/"
+        weight: 10
+      - identifier: tags
+        name: Tags
+        url: "/tags/"
+        weight: 20
+      - identifier: archives
+        name: Archives
+        url: "/archives/"
+        weight: 30
+      - identifier: search
+        name: Search
+        url: "/search"
+        weight: 5
   vn:
     contentDir: content/vn
     languageName: Vietnamese
     languageCode: vi
-
     params:
       navigation:
         help: Aide
     title: Blog
     weight: 2
     homeInfoParams:
-      Title: "Xin chào"
-      Content: "Yoyo"
+      Title: Xin chào
+      Content: Yoyo
     menu:
       main:
-        - identifier: Phân loại
-          name: Phân loại
-          url: /categories/
-          weight: 10
-        - identifier: Tags
-          name: Tags
-          url: /tags/
-          weight: 20
-        - identifier: Tổng hợp
-          name: Tổng hợp
-          url: /archives/
-          weight: 30
-        - identifier: Tìm kiếm
-          name: Tìm kiếm
-          url: /search
-          weight: 5
-
+      - identifier: Phân loại
+        name: Phân loại
+        url: "/categories/"
+        weight: 10
+      - identifier: Tags
+        name: Tags
+        url: "/tags/"
+        weight: 20
+      - identifier: Tổng hợp
+        name: Tổng hợp
+        url: "/archives/"
+        weight: 30
+      - identifier: Tìm kiếm
+        name: Tìm kiếm
+        url: "/search"
+        weight: 5
 params:
-  custom_css: ["css/extended/custom.css"]
+  custom_css:
+  - css/extended/custom.css
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
@@ -74,27 +69,28 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
+    keys:
+    - title
+    - permalink
+    - summary
+    - content
   comments: true
   homeInfoParams:
-    Title: "Hello there"
-    Content: "Welcome to my blog. Here you find will some cool stuffs."
-
+    Title: Hello there
+    Content: Welcome to my blog. Here you find will some cool stuffs.
   socialIcons:
-    - name: github
-      url: "https://github.com"
-    - name: twitter
-      url: "https://twitter.com"
-    - name: facebook
-      url: "https://facebook.com"
-
+  - name: github
+    url: https://github.com
+  - name: twitter
+    url: https://twitter.com
+  - name: facebook
+    url: https://facebook.com
   ShowBreadCrumbs: true
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
-
 outputs:
   home:
-    - HTML
-    - RSS
-    - JSON # is necessary
+  - HTML
+  - RSS
+  - JSON
