@@ -4,6 +4,7 @@ title: Blog stuff
 theme: PaperMod
 
 params:
+  custom_css: ["css/extended/custom.css"]
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
