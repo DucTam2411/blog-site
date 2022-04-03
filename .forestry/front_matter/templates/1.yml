@@ -33,3 +33,5 @@ fields:
   config:
     required: true
   label: Author
+pages:
+- content/posts/chicken.md
