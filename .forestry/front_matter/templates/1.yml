@@ -41,6 +41,13 @@ fields:
   type: tag_list
   default: []
   label: Categories
+- name: showToc
+  type: text
+  config:
+    required: false
+  label: showToc
+  default: 'true'
+  hidden: true
 pages:
 - content/english/posts/why-to-care-about-privacy-after-years-of-sharing-data.md
 - content/english/posts/why-to-care-about-privacy-after-years-of-sharing-data.md
