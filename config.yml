@@ -3,6 +3,27 @@ languageCode: en-us
 title: Blog stuff
 theme: PaperMod
 
+languages:
+  ar:
+    languagedirection: rtl
+    title: مدونتي
+    weight: 2
+  en:
+    params:
+      linkedin: https://linkedin.com/whoever
+    title: My blog
+    weight: 1
+  fr:
+    params:
+      linkedin: https://linkedin.com/fr/whoever
+      navigation:
+        help: Aide
+    title: Mon blogue
+    weight: 2
+  pt-pt:
+    title: O meu blog
+    weight: 3
+
 params:
   custom_css: ["css/extended/custom.css"]
   fuseOpts:
