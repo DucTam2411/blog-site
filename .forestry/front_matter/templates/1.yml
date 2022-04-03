@@ -33,6 +33,3 @@ fields:
   config:
     required: true
   label: Author
-pages:
-- content/posts/sieu-nhan-dien-quang.md
-- content/posts/this-is-the-title.md
