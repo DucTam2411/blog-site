@@ -16,19 +16,9 @@ sections:
   match: "*"
 - type: directory
   path: content/en/posts
-  label: 'Post EN '
+  label: POST EN
   create: all
   match: "*"
-- type: directory
-  path: content/vn
-  label: Pages VN
-  create: all
-  match: "*"
-- type: directory
-  path: content/posts
-  label: Posts
-  create: all
-  match: "**/*"
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
