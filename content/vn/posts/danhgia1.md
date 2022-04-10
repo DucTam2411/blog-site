@@ -12,15 +12,13 @@ title = "Đánh giá AMD Ryzen 7 5700G: Siêu sao chơi game giá rẻ"
 
 AMD cuối cùng đã cho phép chúng tôi liệt kê nắp về số hiệu suất cho APU mới nhất của mình (CPU có đồ họa tích hợp) - Ryzen 7 5700G là sức mạnh của tám lõi Zen 3 kết hợp với đồ họa Radeon khiến nó trở thành APU mạnh nhất mà công ty từng có được sản xuất.
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47D2.tmp.png =624x351)
-
-Ryzen 7 5700G của AMD
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-001.jpeg)
 
 APU từ lâu đã là một số sản phẩm thú vị và cạnh tranh nhất mà công ty cung cấp, kéo dài từ trước khi ra mắt năm 2017 của kiến ​​trúc Ryzen và Zen. Thực tế là chúng kết hợp đồ họa tích hợp mạnh mẽ có khả năng chơi game 1080p, có nghĩa là bạn có thể loại bỏ card đồ họa riêng biệt và xây dựng một PC chơi game rẻ hơn.
 
 Có hai lĩnh vực hiệu suất chính mà chúng tôi sẽ đặc biệt quan tâm khám phá ngày hôm nay - thứ nhất là cách Ryzen 7 5700G xếp chồng lên nhau so với phần còn lại của dòng Ryzen 5000 trong việc tạo nội dung và cả trong các trò chơi sử dụng GPU rời. Thứ hai, loại bỏ GPU đó và cho phép đồ họa Radeon tích hợp thực hiện công việc của chúng trong các trò chơi để xem liệu bạn có thực sự có thể chơi game ở 1080p mà không cần một card đồ họa riêng hay không.
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47D3.tmp.jpg =562x263)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-002.png)
 
 **Họ so sánh như thế nào**
 
@@ -30,7 +28,7 @@ Cả hai CPU đều có TDP là 65W, giống như [Ryzen 5 5600X](https://www.fo
 
 Điều này có nghĩa là cả hai CPU đều có thể được làm mát bằng bộ làm mát CPU Wraith Stealth đi kèm và cũng sẽ tạo ra các giải pháp chơi game kiểu dáng nhỏ tuyệt vời, tất nhiên tùy thuộc vào cách chúng thực sự hoạt động. Mặc dù vậy, trên lý thuyết, Ryzen 7 5700G có vẻ không phù hợp với [Ryzen 7 5800X](https://www.forbes.com/sites/antonyleather/2020/11/05/amd-ryzen-7-5800x-review-new-eight-core-processor-smashes-it-out-the-park/?sh=2a43ba127482 "https://www.forbes.com/sites/antonyleather/2020/11/05/amd-ryzen-7-5800x-review-new-eight-core-processor-smashes-it-out-the-park/?sh = 2a43ba127482") , với tần số tăng đỉnh thấp hơn, TDP thấp hơn và một nửa bộ nhớ đệm L2, ngay cả khi nó có cùng tám lõi và 16 luồng.
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47E4.tmp.png =624x416)
+![](/uploads/picture3.png)
 
 Ryzen 7 5700G của AMD
 
@@ -42,7 +40,7 @@ Kiến trúc Zen 3 đã ra đời được một năm, nhưng chúng tôi luôn 
 
 Tôi đã sử dụng bo mạch chủ Asus ROG Strix B550-XE Gaming WiFi để thử nghiệm cùng với bộ nhớ Corsair Vengeance DDR4 3466MHz. CPU cũng được làm mát bằng chất lỏng với hệ thống tản nhiệt nước tùy chỉnh để đảm bảo không có tắc nghẽn nhiệt.
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47E5.tmp.png =624x416)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-004.jpeg)
 
 Ryzen 7 5700G của AMD
 
@@ -50,43 +48,43 @@ Kết quả đơn luồng trong Cinebench R23 chậm hơn một chút so với R
 
 **Cinebench R23 Single-threaded**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47E6.tmp.jpg =564x608)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-005.png)
 
 Dưới đây, kết quả đa luồng cho thấy lợi thế của Ryzen 7 5800X với tốc độ xung nhịp cao hơn và bộ nhớ đệm bổ sung, trong khi Ryzen 7 5700G cũng chậm hơn [Core i7-11700K. ](https://www.forbes.com/sites/antonyleather/2021/03/30/intel-core-i5-11600k-and-core-i7-11700k-vs-amd-ryzen-5-5600x-and-ryzen-7-5800x-which-should-you-buy/?sh=2f5043e764d8 "https://www.forbes.com/sites/antonyleather/2021/03/30/intel-core-i5-11600k-and-core-i7-11700k-vs-amd-ryzen-5-5600x-and-ryzen- 7-5800x-bạn-nên-mua /? Sh = 2f5043e764d8")Tuy nhiên, các lõi bổ sung của nó có nghĩa là nó nhanh hơn nhiều so với Ryzen 5 5600X và Core i5-11600K.
 
 **Cinebench R23 Multi-threaded**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47E7.tmp.jpg =564x624)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-006.png)
 
 HandBrake có quy mô lên đến tám lõi hoặc hơn, nhưng một lần nữa Ryzen 7 5800X nhanh hơn nhiều, nằm giữa Core i7-10700K và Core i7-11700K, nhưng lại dẫn đầu khá so với Ryen 5 5600X.
 
 **HandBrake video encoding (time-based score, RealBench)**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47E8.tmp.jpg =557x684)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-007.png)
 
 Hiệu suất đã giảm trong các bài kiểm tra Photoshop và Lightroom, trong đó số lượng lõi thô nhiều hơn số lõi và thậm chí Ryzen 5 5600X còn cung cấp hiệu suất cao hơn một chút.
 
 **Adobe Lightroom + Photoshop combined workflow (time-based score, UL Procyon)**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47E9.tmp.jpg =567x425)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-008.png)
 
 Thử nghiệm trò chơi đầu tiên của chúng tôi bên dưới là Dirt 5 và thực sự không có nhiều thứ giữa tất cả các CPU được thử nghiệm, vì vậy mặc dù 5700G nằm ở cuối ngăn xếp, nhưng con số này chỉ thấp hơn một vài khung hình so với Ryzen 5 5600X.
 
 **Dirt 5, 1920 x 1080, Ultra Settings**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47EA.tmp.jpg =445x705)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-009.png)
 
 Một lần nữa, Watch Dogs: Legion không cho thấy nhiều cải tiến giữa các CPU sử dụng RTX 3070, với APU mới có tốc độ vài khung hình / giây thấp hơn Ryzen 5 5600X.
 
 **Watch Dogs: Legion1,920 x 1,080, ultra settings, DX12**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47EB.tmp.jpg =448x687)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-010.png)
 
 Mức tiêu thụ điện năng với card đồ họa rời là một trong những mức thấp nhất trong thử nghiệm, chỉ 163W, tương đương với Ryzen 5 5600X.
 
 **Load power consumption**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47EC.tmp.jpg =624x580)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-011.png)
 
 **Đồ họa tích hợp**
 
@@ -94,19 +92,19 @@ Dưới đây, chúng tôi đã loại bỏ RTX 3070 và chỉ sử dụng đồ
 
 **Watch Dogs: Legion, 1,920 x 1,080, Low settings, DX12**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47FD.tmp.jpg =563x166)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-012.png)
 
 Dưới đây, Dirt 5 tốt hơn một chút so với Ryzen 7 5700G, quản lý 27fps mượt mà ở mức thấp 99% và 32fps ở mức trung bình, trong khi Intel Core i5-11600K hầu như không nói lắp các chữ số đơn lẻ.
 
 **Dirt 5, 1920 x 1080, Low Settings**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47FE.tmp.jpg =572x184)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-013.png)
 
 Nếu bạn đang có ý định sử dụng PSU cấp thấp, thì trong các trò chơi, hệ thống chỉ tiêu thụ hơn 100W, vì vậy nhiều khung máy nhỏ có tích hợp PSU sẽ ổn miễn là chúng cung cấp 200W trở lên.
 
 **Load power consumption (gaming)**
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps47FF.tmp.jpg =571x147)
+![](/uploads/aspose-words-a52708a0-b11b-47b5-b41c-79942ce2d8f7-014.png)
 
 **Kết luận**
 
