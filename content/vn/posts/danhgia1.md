@@ -28,7 +28,7 @@ Cả hai CPU đều có TDP là 65W, giống như [Ryzen 5 5600X](https://www.fo
 
 Điều này có nghĩa là cả hai CPU đều có thể được làm mát bằng bộ làm mát CPU Wraith Stealth đi kèm và cũng sẽ tạo ra các giải pháp chơi game kiểu dáng nhỏ tuyệt vời, tất nhiên tùy thuộc vào cách chúng thực sự hoạt động. Mặc dù vậy, trên lý thuyết, Ryzen 7 5700G có vẻ không phù hợp với [Ryzen 7 5800X](https://www.forbes.com/sites/antonyleather/2020/11/05/amd-ryzen-7-5800x-review-new-eight-core-processor-smashes-it-out-the-park/?sh=2a43ba127482 "https://www.forbes.com/sites/antonyleather/2020/11/05/amd-ryzen-7-5800x-review-new-eight-core-processor-smashes-it-out-the-park/?sh = 2a43ba127482") , với tần số tăng đỉnh thấp hơn, TDP thấp hơn và một nửa bộ nhớ đệm L2, ngay cả khi nó có cùng tám lõi và 16 luồng.
 
-![](/uploads/picture3.png)
+![](/uploads/picture3.png "Ryzen 7 5700G của AMD")
 
 Kiến trúc Zen 3 đã ra đời được một năm, nhưng chúng tôi luôn thấy sự chậm trễ này với các APU của AMD. Đáng buồn thay, điều này cũng đúng với đồ họa Radeon tích hợp, có kiến ​​trúc đồ họa Vega thậm chí còn cũ hơn. Điều này làm cho nó cũ hơn hai thế hệ so với công nghệ RDNA 2 hiện tại được sử dụng trong [GPU Radeon RX 6800](https://www.forbes.com/sites/antonyleather/2020/11/18/amd-radeon-rx-6800-vs-nvidia-rtx-3070-whats-the-best-500-graphics-card/?sh=5c6498c52e92 "https://www.forbes.com/sites/antonyleather/2020/11/18/amd-radeon-rx-6800-vs-nvidia-rtx-3070-whats-the-best-500-graphics-card/?sh = 5c6498c52e92") của nó .
 
