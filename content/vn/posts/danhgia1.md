@@ -1,10 +1,10 @@
 +++
 author = "Ton Van Hiep"
-categories = []
+categories = ["review"]
 content = ""
 date = 2022-04-10T13:14:32Z
 showToc = "true"
-tags = []
+tags = ["chip", "intel", "amd"]
 title = "Đánh giá AMD Ryzen 7 5700G: Siêu sao chơi game giá rẻ"
 
 +++
@@ -112,7 +112,7 @@ Mặc dù việc thiếu hỗ trợ PCI-E 4.0 có thể được tha thứ khi b
 
 Điều này có nghĩa là Ryzen 7 5700G có phần không cân bằng, nghiêng về hiệu suất CPU và cung cấp sức mạnh đa luồng lớn vượt xa các CPU sáu lõi có giá tương tự, nhưng không có hiệu suất đồ họa để trở thành một giải pháp chơi game 1080p có thẩm quyền, ít nhất là không phải ở mức $ 359.
 
-![](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps4800.tmp.png =624x351)
+!\[\](file:///C:\\Users\\DucTam\\AppData\\Local\\Temp\\ksohtml\\wps4800.tmp.png =624x351)
 
 Ryzen 7 5700G của AMD
 
@@ -121,3 +121,7 @@ Vậy làm gì? Chà, vấn đề là, để có được hiệu suất chơi g
 Nếu bạn không có bất kỳ card đồ họa nào khác, Ryzen 7 5700G có thể tạo ra một giải pháp stop-gap - có được mọi thứ bạn cần (ngoài hỗ trợ PCIe 4.0) cho PC chạy AMD Zen 3 của bạn ngay bây giờ ngoại trừ card đồ họa , và đợi cho đến khi giá giảm. Hãy làm với hiệu suất CPU tuyệt vời và hiệu suất chơi game khiêm tốn, sau đó tất cả những gì bạn cần làm là giảm bớt một card đồ họa để có tốc độ khung hình cao hơn. Tuy nhiên, là một giải pháp chơi game cân bằng, Ryzen 7 5700G không hoàn toàn mang lại trải nghiệm chơi game mà tôi mong đợi.
 
 Nguồn: [https://www.forbes.com/sites/antonyleather/2021/08/03/amd-ryzen-7-5700g-review-a-budget-gaming-superstar/?sh=633c151b2240](https://www.forbes.com/sites/antonyleather/2021/08/03/amd-ryzen-7-5700g-review-a-budget-gaming-superstar/?sh=633c151b2240 "https://www.forbes.com/sites/antonyleather/2021/08/03/amd-ryzen-7-5700g-review-a-budget-gaming-superstar/?sh=633c151b2240")
+
+Nếu bạn có hứng thú với sản phẩm này, bạn có thể tham khảo giá ở đây
+
+[https://www.linhkien.shop/san-pham](https://www.linhkien.shop/san-pham "sanphan")
