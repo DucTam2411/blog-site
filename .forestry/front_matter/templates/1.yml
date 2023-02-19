@@ -54,5 +54,6 @@ fields:
     required: false
   label: trackID
 pages:
+- content/vn/posts/PROJECT 1/day-1-config-environment.md
 - content/vn/posts/podcast-khong-ten-gi-i-thi-u.md
 - content/vn/posts/podcast-khong-ten-gi-i-thi-u.md
