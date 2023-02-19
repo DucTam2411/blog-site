@@ -48,6 +48,11 @@ fields:
   label: showToc
   default: 'true'
   hidden: true
+- name: trackid
+  type: text
+  config:
+    required: false
+  label: trackID
 pages:
 - content/english/posts/why-to-care-about-privacy-after-years-of-sharing-data.md
 - content/vn/posts/danhgia1.md
