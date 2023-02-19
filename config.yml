@@ -1,34 +1,10 @@
 ---
 baseURL: https://blogt.xyz/
-languageCode: en-us
-title: Blog stuff
+defaultContentLanguage: vn
+languagCode: en-us
+title: Podcast - Khong Ten
 theme: PaperMod
 languages:
-  en:
-    contentDir: content/english
-    languageName: English
-    params:
-      linkedin: https://linkedin.com/whoever
-    title: My blog
-    weight: 10
-    menu:
-      main:
-      - identifier: categories
-        name: Categories
-        url: "/categories/"
-        weight: 10
-      - identifier: tags
-        name: Tags
-        url: "/tags/"
-        weight: 20
-      - identifier: archives
-        name: Archives
-        url: "/archives/"
-        weight: 30
-      - identifier: search
-        name: Search
-        url: "/search"
-        weight: 5
   vn:
     contentDir: content/vn
     languageName: Vietnamese
