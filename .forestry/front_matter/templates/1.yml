@@ -48,7 +48,7 @@ fields:
   label: showToc
   default: 'true'
   hidden: true
-- name: trackid
+- name: track
   type: text
   config:
     required: false
